@@ -14,3 +14,11 @@ npm start
 ```
 npm run deploy
 ```
+
+#### Example routes
+
+```
+http://localhost:3000/#/
+http://localhost:3000/#/chart
+http://localhost:3000/#/search
+```

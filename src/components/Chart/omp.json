@@ -1,0 +1,220 @@
+{
+  "response": [
+    {
+      "episode": 1,
+      "id": "/title/tt4569062/",
+      "season": 1,
+      "title": "Saikyô no otoko",
+      "titleType": "tvEpisode",
+      "year": 2015,
+      "rating": "8.6"
+    },
+    {
+      "episode": 2,
+      "id": "/title/tt5109276/",
+      "season": 1,
+      "title": "Kokô no saibôgu",
+      "titleType": "tvEpisode",
+      "year": 2015,
+      "rating": "8.8"
+    },
+    {
+      "episode": 3,
+      "id": "/title/tt5109278/",
+      "season": 1,
+      "title": "Shûnen no kagakusha",
+      "titleType": "tvEpisode",
+      "year": 2015,
+      "rating": "9.0"
+    },
+    {
+      "episode": 4,
+      "id": "/title/tt5152430/",
+      "season": 1,
+      "title": "Imadoki no ninja",
+      "titleType": "tvEpisode",
+      "year": 2015,
+      "rating": "8.8"
+    },
+    {
+      "episode": 5,
+      "id": "/title/tt5169658/",
+      "season": 1,
+      "title": "Kyûkoku no shi",
+      "titleType": "tvEpisode",
+      "year": 2015,
+      "rating": "9.0"
+    },
+    {
+      "episode": 6,
+      "id": "/title/tt5173426/",
+      "season": 1,
+      "title": "Saikyô no toshi",
+      "titleType": "tvEpisode",
+      "year": 2015,
+      "rating": "8.7"
+    },
+    {
+      "episode": 7,
+      "id": "/title/tt5203540/",
+      "season": 1,
+      "title": "Shikô no deshi",
+      "titleType": "tvEpisode",
+      "year": 2015,
+      "rating": "9.0"
+    },
+    {
+      "episode": 8,
+      "id": "/title/tt5220908/",
+      "season": 1,
+      "title": "Shinkai no Ô",
+      "titleType": "tvEpisode",
+      "year": 2015,
+      "rating": "9.0"
+    },
+    {
+      "episode": 9,
+      "id": "/title/tt5236798/",
+      "season": 1,
+      "title": "Fukutsu no seigi",
+      "titleType": "tvEpisode",
+      "year": 2015,
+      "rating": "9.3"
+    },
+    {
+      "episode": 10,
+      "id": "/title/tt5252356/",
+      "season": 1,
+      "title": "Katsute nai hodo no kiki",
+      "titleType": "tvEpisode",
+      "year": 2015,
+      "rating": "8.9"
+    },
+    {
+      "episode": 11,
+      "id": "/title/tt5257562/",
+      "season": 1,
+      "title": "Zen ushû no hasha",
+      "titleType": "tvEpisode",
+      "year": 2015,
+      "rating": "9.2"
+    },
+    {
+      "episode": 12,
+      "id": "/title/tt5271822/",
+      "season": 1,
+      "title": "Saikyô no hîrô",
+      "titleType": "tvEpisode",
+      "year": 2015,
+      "rating": "9.5"
+    },
+    {
+      "episode": 1,
+      "id": "/title/tt9556748/",
+      "season": 2,
+      "title": "Return of the Hero",
+      "titleType": "tvEpisode",
+      "year": 2019,
+      "rating": "8.2"
+    },
+    {
+      "episode": 2,
+      "id": "/title/tt10050328/",
+      "season": 2,
+      "title": "Human Monster",
+      "titleType": "tvEpisode",
+      "year": 2019,
+      "rating": "8.5"
+    },
+    {
+      "episode": 3,
+      "id": "/title/tt10050330/",
+      "season": 2,
+      "title": "The Hunt Begins",
+      "titleType": "tvEpisode",
+      "year": 2019,
+      "rating": "9.1"
+    },
+    {
+      "episode": 4,
+      "id": "/title/tt10050332/",
+      "season": 2,
+      "title": "Metal Bat",
+      "titleType": "tvEpisode",
+      "year": 2019,
+      "rating": "7.7"
+    },
+    {
+      "episode": 5,
+      "id": "/title/tt10050334/",
+      "season": 2,
+      "title": "The Martial Arts Tournament",
+      "titleType": "tvEpisode",
+      "year": 2019,
+      "rating": "7.4"
+    },
+    {
+      "episode": 6,
+      "id": "/title/tt10050336/",
+      "season": 2,
+      "title": "The Uprising of the Monsters",
+      "titleType": "tvEpisode",
+      "year": 2019,
+      "rating": "7.7"
+    },
+    {
+      "episode": 7,
+      "id": "/title/tt10050338/",
+      "season": 2,
+      "title": "Class S Heroes",
+      "titleType": "tvEpisode",
+      "year": 2019,
+      "rating": "8.9"
+    },
+    {
+      "episode": 8,
+      "id": "/title/tt10050340/",
+      "season": 2,
+      "title": "The Resistance of the Strong",
+      "titleType": "tvEpisode",
+      "year": 2019,
+      "rating": "8.6"
+    },
+    {
+      "episode": 9,
+      "id": "/title/tt10050342/",
+      "season": 2,
+      "title": "The Troubles of the Strongest",
+      "titleType": "tvEpisode",
+      "year": 2019,
+      "rating": "8.1"
+    },
+    {
+      "episode": 10,
+      "id": "/title/tt10050346/",
+      "season": 2,
+      "title": "The Encircling Net of Justice",
+      "titleType": "tvEpisode",
+      "year": 2019,
+      "rating": "7.9"
+    },
+    {
+      "episode": 11,
+      "id": "/title/tt10050348/",
+      "season": 2,
+      "title": "Everyone's Dignity",
+      "titleType": "tvEpisode",
+      "year": 2019,
+      "rating": "9.1"
+    },
+    {
+      "episode": 12,
+      "id": "/title/tt10050352/",
+      "season": 2,
+      "title": "Cleaning Up the Disciple's Mess",
+      "titleType": "tvEpisode",
+      "year": 2019,
+      "rating": "8.8"
+    }
+  ]
+}

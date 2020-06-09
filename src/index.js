@@ -3,13 +3,17 @@ import ReactDOM from 'react-dom';
 import './scss/index.css';
 import App from './components/App/App';
 import * as serviceWorker from './serviceWorker';
+import { HashRouter } from 'react-router-dom';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root'),
+const Application = (
+  <HashRouter>
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  </HashRouter>
 );
+
+ReactDOM.render(Application, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
