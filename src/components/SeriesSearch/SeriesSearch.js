@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 
 import { getEpisodes } from '../../api/api';
 import { Chart } from '../Chart/Chart';
+import { SearchForm } from './SearchForm';
 
 const SeriesSearch = () => {
   const [chartInfo, setChartInfo] = useState([]);
@@ -86,15 +87,11 @@ const SeriesSearch = () => {
 
   return (
     <div className="">
-      <form className="searchForm">
-        <input
-          value={searchValue}
-          onChange={handleSearchInputChange}
-          placeholder="Search Series Here"
-          type="text"
-        />
-        <input onClick={searchFunction} value="search" type="submit" />
-      </form>
+      <SearchForm
+        handleChange={handleSearchInputChange}
+        handleSubmit={searchFunction}
+        value={searchValue}
+      />
       <Chart data={chartInfo} />
     </div>
   );
