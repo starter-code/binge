@@ -23,7 +23,7 @@ module.exports = {
     extensions: ['*', '.js', '.jsx', '.scss'],
   },
   output: {
-    path: path.join(__dirname, 'dist'),
+    path: path.join(__dirname, 'build'),
     filename: 'bundle.js',
   },
   plugins: [
@@ -37,7 +37,7 @@ module.exports = {
   ],
   devtool: 'cheap-module-eval-source-map',
   devServer: {
-    contentBase: path.join(__dirname, 'dist'),
+    contentBase: path.join(__dirname, 'build'),
     hot: true,
   },
 };
