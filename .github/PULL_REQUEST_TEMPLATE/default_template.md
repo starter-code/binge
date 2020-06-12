@@ -1,8 +1,6 @@
 #### Summary
 
-- [ ]
-- [ ]
-- [ ]
+-
 
 #### What I did
 
@@ -26,3 +24,9 @@
 
 - Before:
 - After:
+
+#### Checklist
+
+[ ] Commits are in semantic format
+[ ] PR title is in format `TYPE(scope): description`
+[ ] Has Summary
