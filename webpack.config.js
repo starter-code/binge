@@ -6,6 +6,7 @@ const CopyPlugin = require('copy-webpack-plugin');
 module.exports = {
   mode: 'development',
   entry: './src/index.js',
+  watch: true,
   module: {
     rules: [
       {
@@ -35,9 +36,9 @@ module.exports = {
       patterns: [{ from: 'public', to: './' }],
     }),
   ],
-  devtool: 'cheap-module-eval-source-map',
   devServer: {
     contentBase: path.join(__dirname, 'build'),
     hot: true,
+    open: true,
   },
 };
