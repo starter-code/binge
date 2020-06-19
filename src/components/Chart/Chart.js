@@ -1,4 +1,4 @@
-import _ from 'lodash';
+import { _ } from '../../Utils';
 import React from 'react';
 
 import { ChartSquare } from './ChartSquare';

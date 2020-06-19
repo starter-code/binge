@@ -1,4 +1,4 @@
-import _ from 'lodash';
+import { _ } from '../../Utils';
 import React, { useState } from 'react';
 
 import { getEpisodes } from '../../api/api';

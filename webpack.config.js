@@ -1,12 +1,12 @@
 const path = require('path');
-const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   mode: 'development',
-  entry: './src/index.js',
-  watch: true,
+  entry: {
+    main: './src/index.js',
+  },
   module: {
     rules: [
       {
@@ -24,11 +24,16 @@ module.exports = {
     extensions: ['*', '.js', '.jsx', '.scss'],
   },
   output: {
-    path: path.join(__dirname, 'build'),
-    filename: 'bundle.js',
+    filename: '[name].bundle.js',
+    chunkFilename: '[name].bundle.js',
+    path: path.resolve(__dirname, 'build'),
+  },
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+    },
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
       template: './public/index.html',
     }),

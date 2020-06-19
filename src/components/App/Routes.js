@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 import { Chart } from '../Chart/Chart';
-import SeriesSearch from '../SeriesSearch/SeriesSearch';
+import AsyncSearch from '../SeriesSearch/AsyncSeriesSearch';
 
 export const Routes = () => {
   return (
@@ -11,7 +11,7 @@ export const Routes = () => {
         {/* <Route exact path="/" component={MainPage} /> */}
         {/* <Route exact path="/contributors" component={ContributorsPage} /> */}
         <Route exact path="/chart" component={Chart} />
-        <Route exact path="/search" component={SeriesSearch} />
+        <Route exact path="/search" component={AsyncSearch} />
         {/* <Route path="/" component={NotFoundPage} /> */}
       </Switch>
     </div>
