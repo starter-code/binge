@@ -1,18 +1,29 @@
 import classNameContext from 'classnames';
+import gradient from 'gradient-color';
 import React from 'react';
+
+// 10 colors from dark red to yellow to dark green
+const colors = [
+  '#110000',
+  '#770000',
+  '#880000',
+  '#CC0000',
+  '#FF0000', // red
+  '#CCCC00', // dark yellow
+  '#FFFF00', // yellow
+  '#00FF00', // green
+  '#008800', // mid green
+  '#001100', // dark green
+];
 
 export const ChartSquare = ({ data, type }) => {
   const { rating, season: seasonNumber, episode: episodeNumber } = data;
   // TODO: create a more verbose hex decimal color scheme
+
+  const colorsGradient = gradient(colors, 100);
   const getColor = (episodeRating) => {
-    let color = 'white';
-    if (episodeRating <= 4) {
-      color = 'red';
-    } else if (episodeRating <= 7) {
-      color = 'yellow';
-    } else {
-      color = 'green';
-    }
+    let rating = episodeRating * 10;
+    let color = colorsGradient[rating];
     return color;
   };
 
@@ -22,6 +33,7 @@ export const ChartSquare = ({ data, type }) => {
     gridRowStart: seasonNumber,
     gridRowEnd: seasonNumber + 1,
     backgroundColor: type === 'episodeData' && getColor(rating),
+    color: type === 'episodeData' ? '#F0F0F0' : '#000000',
   };
 
   const chartSquareClassNames = classNameContext({
