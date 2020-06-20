@@ -1,5 +1,5 @@
 import React from 'react';
 
-export const MainPage = () => {
+export const HomePage = () => {
   return <div>This is the home page</div>;
 };

@@ -1,4 +1,4 @@
-import { _ } from '../../Utils';
+import { _ } from '../../utils';
 import React, { useState } from 'react';
 
 import { getEpisodes } from '../../api/api';

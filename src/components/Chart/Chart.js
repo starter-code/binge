@@ -1,4 +1,4 @@
-import { _ } from '../../Utils';
+import { _ } from '../../utils';
 import React from 'react';
 
 import { ChartSquare } from './ChartSquare';
