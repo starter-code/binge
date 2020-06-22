@@ -15,6 +15,7 @@
     "classnames": "^2.2.6",
     "copy-webpack-plugin": "^6.0.2",
     "css-loader": "^3.5.3",
+    "gradient-color": "^2.0.1",
     "html-webpack-plugin": "^4.3.0",
     "lodash": "^4.17.15",
     "react": "^16.13.1",
