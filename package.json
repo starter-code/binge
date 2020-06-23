@@ -28,7 +28,7 @@
     "style-loader": "^1.2.1"
   },
   "scripts": {
-    "start": "webpack-dev-server",
+    "start": "webpack-dev-server --hot",
     "clean": "rm -rf node_modules && rm package-lock.json",
     "clean:webpack": "rm -rf dist",
     "build:dev": "webpack-dev-server",

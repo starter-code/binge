@@ -43,7 +43,6 @@ module.exports = {
   ],
   devServer: {
     contentBase: path.join(__dirname, 'build'),
-    hot: true,
     open: true,
   },
 };
