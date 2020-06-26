@@ -1,5 +1,6 @@
 @import 'App';
 @import 'ChartSquare';
+@import 'Chart';
 
 body {
   margin: 0;
@@ -13,22 +14,4 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
-
-.chart {
-  display: grid;
-  grid-auto-flow: column;
-  margin: 20px;
-}
-
-/* TODO: Make all borders the same pixels */
-.episode-data-square {
-  height: 60px;
-  width: 60px;
-  border: 1px solid black;
-  line-height: 60px;
-}
-
-.season-labels {
-  line-height: 60px;
 }

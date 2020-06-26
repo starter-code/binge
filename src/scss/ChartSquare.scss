@@ -1,0 +1,18 @@
+/* TODO: Make all borders the same pixels */
+.episode-data-square {
+  height: 60px;
+  width: 60px;
+  border: 1px solid black;
+  line-height: 60px;
+  margin-left: -1px;
+  margin-bottom: -1px;
+}
+
+.season-labels {
+  line-height: 60px;
+  margin-right: 10px;
+}
+
+.episode-labels {
+  margin-top: 5px;
+}
