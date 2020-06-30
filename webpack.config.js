@@ -41,7 +41,7 @@ module.exports = {
       patterns: [
         {
           from: 'public',
-          to: 'build',
+          to: 'assets',
         },
       ],
     }),
@@ -52,6 +52,8 @@ module.exports = {
   devtool: 'eval-cheap-module-source-map',
   devServer: {
     contentBase: path.join(__dirname, 'build'),
+    liveReload: false,
     open: true,
+    overlay: true,
   },
 };

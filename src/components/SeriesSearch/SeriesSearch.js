@@ -1,11 +1,10 @@
-import { _ } from '../../utils';
 import React, { useState } from 'react';
 
 import { getEpisodes } from '../../api/api';
 import { Chart } from '../Chart/Chart';
 import { SearchForm } from './SearchForm';
 
-const SeriesSearch = () => {
+export const SeriesSearch = () => {
   const [chartInfo, setChartInfo] = useState([]);
   const [searchValue, setSearchValue] = useState('');
 
@@ -40,5 +39,3 @@ const SeriesSearch = () => {
     </div>
   );
 };
-
-export default SeriesSearch;

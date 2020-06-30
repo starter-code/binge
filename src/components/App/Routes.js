@@ -3,7 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 
 import { HomePage } from '../Pages/HomePage';
 import { Chart } from '../Chart/Chart';
-import AsyncSearch from '../SeriesSearch/AsyncSeriesSearch';
+import { SeriesSearch } from '../SeriesSearch/SeriesSearch';
 
 export const Routes = () => {
   return (
@@ -12,7 +12,7 @@ export const Routes = () => {
         <Route exact path="/" component={HomePage} />
         {/* <Route exact path="/contributors" component={ContributorsPage} /> */}
         <Route exact path="/chart" component={Chart} />
-        <Route exact path="/search" component={AsyncSearch} />
+        <Route exact path="/search" component={SeriesSearch} />
         {/* <Route path="/" component={NotFoundPage} /> */}
       </Switch>
     </div>
