@@ -4,15 +4,24 @@ const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   mode: 'development',
-  entry: {
-    main: './src/index.js',
-  },
+  entry: './src/index.js',
   module: {
     rules: [
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: ['babel-loader'],
+      },
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'eslint-loader',
+        options: {
+          fix: true,
+          emitError: true,
+          emitWarning: true,
+          // failOnError: true,
+        },
       },
       {
         test: /\.s[ac]ss$/i,
@@ -24,21 +33,20 @@ module.exports = {
     extensions: ['*', '.js', '.jsx', '.scss'],
   },
   output: {
-    filename: '[name].bundle.js',
-    chunkFilename: '[name].bundle.js',
-    path: path.resolve(__dirname, 'build'),
-  },
-  optimization: {
-    splitChunks: {
-      chunks: 'all',
-    },
+    filename: 'bundle.js',
+    path: path.join(__dirname, 'build'),
   },
   plugins: [
+    new CopyPlugin({
+      patterns: [
+        {
+          from: 'public',
+          to: 'build',
+        },
+      ],
+    }),
     new HtmlWebpackPlugin({
       template: './public/index.html',
-    }),
-    new CopyPlugin({
-      patterns: [{ from: 'public', to: './' }],
     }),
   ],
   devtool: 'eval-cheap-module-source-map',
