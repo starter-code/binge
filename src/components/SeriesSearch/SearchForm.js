@@ -2,11 +2,11 @@ import React from 'react';
 
 export const SearchForm = ({ onSubmit }) => {
   const handleSubmit = (event) => {
+    event.preventDefault();
     const inputValue = event.target.querySelector('input[type="text"]').value;
     onSubmit(inputValue);
 
     event.target.reset();
-    return false;
   };
 
   return (
