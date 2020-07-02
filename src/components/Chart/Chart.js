@@ -4,8 +4,6 @@ import React from 'react';
 import { ChartSquare } from './ChartSquare';
 
 export const Chart = ({ data: chartInfo }) => {
-  const isVisible = chartInfo.length;
-
   /**
    * Generates y-axis season labels for given series
    * @param {Array} data
@@ -56,6 +54,7 @@ export const Chart = ({ data: chartInfo }) => {
 
   const seasonLabels = generateSeasonLabels(chartInfo);
   const episodeLabels = generateEpisodeNumberLabels(chartInfo);
+
   const chartData = _.map(chartInfo, (data) => {
     const output = {
       type: 'episodeData',
@@ -65,6 +64,8 @@ export const Chart = ({ data: chartInfo }) => {
   });
 
   const newChartInfo = [...chartData, ...seasonLabels, ...episodeLabels];
+
+  const isVisible = chartInfo ? chartInfo.length : false;
 
   return (
     <div className="chart">

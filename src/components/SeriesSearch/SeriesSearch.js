@@ -6,35 +6,19 @@ import { SearchForm } from './SearchForm';
 
 export const SeriesSearch = () => {
   const [chartInfo, setChartInfo] = useState([]);
-  const [searchValue, setSearchValue] = useState('');
 
-  const handleSearchInputChange = (event) => {
-    setSearchValue(event.target.value);
-  };
-
-  const resetInputValue = () => {
-    setSearchValue('');
-  };
-
-  const searchFunction = async (event) => {
-    event.preventDefault();
+  const searchFunction = async (searchValue) => {
     setChartInfo([]);
 
     const {
       data: { results },
     } = await getEpisodes(searchValue);
     setChartInfo(results);
-
-    resetInputValue();
   };
 
   return (
-    <div className="">
-      <SearchForm
-        handleChange={handleSearchInputChange}
-        handleSubmit={searchFunction}
-        value={searchValue}
-      />
+    <div className="series-search">
+      <SearchForm onSubmit={searchFunction} />
       <Chart data={chartInfo} />
     </div>
   );
