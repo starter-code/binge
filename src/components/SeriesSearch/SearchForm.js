@@ -1,17 +1,15 @@
-import React from 'react';
+import React, { useRef } from 'react';
 
 export const SearchForm = ({ onSubmit }) => {
+  const inputRef = useRef();
   const handleSubmit = (event) => {
     event.preventDefault();
-    const inputValue = event.target.querySelector('input[type="text"]').value;
-    onSubmit(inputValue);
-
-    event.target.reset();
+    onSubmit(inputRef);
   };
 
   return (
     <form className="searchForm" onSubmit={handleSubmit}>
-      <input placeholder="Search Series Here" type="text" />
+      <input placeholder="Search Series Here" type="text" ref={inputRef} />
       <input type="submit" />
     </form>
   );
