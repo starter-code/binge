@@ -1,15 +1,16 @@
-import React from 'react';
+import React, { useRef } from 'react';
 
-export const SearchForm = ({ handleChange, handleSubmit, value }) => {
+export const SearchForm = ({ onSubmit }) => {
+  const inputRef = useRef();
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    onSubmit(inputRef);
+  };
+
   return (
-    <form className="searchForm">
-      <input
-        onChange={handleChange}
-        placeholder="Search Series Here"
-        type="text"
-        value={value}
-      />
-      <input onClick={handleSubmit} value="search" type="submit" />
+    <form className="searchForm" onSubmit={handleSubmit}>
+      <input placeholder="Search Series Here" type="text" ref={inputRef} />
+      <input type="submit" />
     </form>
   );
 };
