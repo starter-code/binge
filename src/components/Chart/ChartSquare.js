@@ -28,7 +28,7 @@ export const ChartSquare = ({ data, type }) => {
   };
 
   const style = {
-    gridColumnStart: episodeNumber,
+    gridColumnStart: type === 'yearLabels' ? episodeNumber : null,
     gridColumnEnd: episodeNumber + 1,
     gridRowStart: seasonNumber,
     gridRowEnd: seasonNumber + 1,

@@ -1,10 +1,10 @@
 import { _ } from '../../utils';
-import React from 'react';
+import React, { useState } from 'react';
 
 import { ChartSquare } from './ChartSquare';
 
 export const Chart = ({ data: chartInfo }) => {
-  // const [chartEpisodeData, setChartEpisodeData] = useState([]);
+  const [chartType, setChartType] = useState('season/episode');
 
   /**
    * Generates y-axis season labels for given series
@@ -30,11 +30,13 @@ export const Chart = ({ data: chartInfo }) => {
     return seasonLabels;
   };
 
-  const generateYearLabels = (data) => {
+  const generateYearLabels = (inputData) => {
+    const data = _.cloneDeep(inputData);
     const yearsReleased = {};
     let yearLabels = [];
     let yearCounter = 0;
     let episodeCounter = 1;
+
     _.each(data, (episodeData) => {
       let { year } = episodeData;
       if (!yearsReleased[year]) {
@@ -46,20 +48,19 @@ export const Chart = ({ data: chartInfo }) => {
             season: yearCounter + 1,
           },
         };
-        yearsReleased[year] = 1;
+        yearsReleased[year] = true;
         yearLabels.push(label);
+
         year++;
         yearCounter++;
         episodeCounter = 1;
       } else {
-        yearsReleased[year]++;
         episodeCounter++;
       }
       episodeData.season = yearCounter;
       episodeData.episode = episodeCounter;
     });
-    console.log('year labels are:', yearLabels);
-    return { yearLabels, yearsReleased };
+    return { yearLabels, data };
   };
 
   /**
@@ -87,10 +88,8 @@ export const Chart = ({ data: chartInfo }) => {
   };
 
   const seasonLabels = generateSeasonLabels(chartInfo);
-  console.log({ seasonLabels });
   const episodeLabels = generateEpisodeNumberLabels(chartInfo);
-  const { yearLabels, yearsReleased } = generateYearLabels(chartInfo);
-  console.log({ yearsReleased, yearLabels });
+  const { yearLabels, data: nData } = generateYearLabels(chartInfo);
 
   const chartData = _.map(chartInfo, (data) => {
     const output = {
@@ -100,16 +99,28 @@ export const Chart = ({ data: chartInfo }) => {
     return output;
   });
 
-  // const newChartInfo = [...chartData, ...seasonLabels, ...episodeLabels];
-  const newChartInfo = [...chartData, ...yearLabels, ...episodeLabels];
-
-  console.log({ chartData });
+  const nChartData = _.map(nData, (data) => {
+    const output = {
+      type: 'episodeData',
+      data,
+    };
+    return output;
+  });
 
   const isVisible = !!chartInfo.length;
 
   const onToggleChart = () => {
-    // setChartEpisodeData();
+    const newChartType =
+      chartType === 'season/episode' ? 'year/episode' : 'season/episode';
+    setChartType(newChartType);
   };
+
+  const view = {
+    'season/episode': [...chartData, ...seasonLabels, ...episodeLabels],
+    'year/episode': [...nChartData, ...yearLabels, ...episodeLabels],
+  };
+
+  const newChartInfo = view[chartType];
 
   return (
     <div className="chart">
