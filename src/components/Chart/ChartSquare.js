@@ -40,6 +40,7 @@ export const ChartSquare = ({ data, type }) => {
     'episode-data-square': type === 'episodeData',
     'season-labels': type === 'seasonLabels',
     'episode-labels': type === 'episodeLabels',
+    'year-labels': type === 'yearLabels',
   });
 
   const renderChartData = (inputType, inputData) => {
@@ -50,6 +51,9 @@ export const ChartSquare = ({ data, type }) => {
         break;
       case 'seasonLabels':
         output = inputData.season;
+        break;
+      case 'yearLabels':
+        output = inputData.year;
         break;
       case 'episodeLabels':
         output = inputData.episode;

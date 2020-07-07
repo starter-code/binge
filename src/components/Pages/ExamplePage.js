@@ -2,7 +2,7 @@ import React from 'react';
 import { Chart } from '../Chart/Chart';
 import { results } from '../Chart/op.json';
 
-const data = results.slice(0, 50);
+const data = results.slice(0, 930);
 
 export const ExamplePage = () => {
   return (
