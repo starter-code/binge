@@ -24,9 +24,13 @@ export const Chart = ({ data: chartInfo }) => {
 
   return (
     <div className="chart">
-      {isVisible ? <div className="y-axis-label">Seasons</div> : null}
-      {isVisible ? <div className="x-axis-label">Episodes</div> : null}
-      <button onClick={onToggleChart}>Toggle</button>
+      {isVisible ? (
+        <React.Fragment>
+          <div className="y-axis-label">Seasons</div>
+          <div className="x-axis-label">Episodes</div>
+          <button onClick={onToggleChart}>Toggle</button>
+        </React.Fragment>
+      ) : null}
       <div className="chart-data">
         {_.map(newChartInfo, (info, index) => {
           const { data, type } = info;
