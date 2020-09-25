@@ -18,8 +18,6 @@ export const SeriesSearch = () => {
     searchRef.current.value = '';
   };
 
-  console.log('!!! chartInfo', chartInfo);
-
   return (
     <div className="series-search">
       <SearchForm onSubmit={onHandleSearchSubmit} />
