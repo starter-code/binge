@@ -54,6 +54,6 @@ module.exports = {
     contentBase: path.join(__dirname, 'build'),
     liveReload: false,
     open: true,
-    overlay: true,
+    // overlay: true,
   },
 };

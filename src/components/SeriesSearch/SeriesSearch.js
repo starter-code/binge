@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import { getEpisodes } from '../../api/api';
 import { Chart } from '../Chart/Chart';
-import { SearchForm } from './SearchForm';
+import { SearchForm } from './SeriesSearchForm';
 
 export const SeriesSearch = () => {
   const [chartInfo, setChartInfo] = useState([]);
@@ -12,9 +12,9 @@ export const SeriesSearch = () => {
 
     const searchInput = searchRef.current.value;
     const { data } = await getEpisodes(searchInput);
-    const { results } = data;
+    const { episodeData } = data;
 
-    setChartInfo(results);
+    setChartInfo(episodeData);
     searchRef.current.value = '';
   };
 
