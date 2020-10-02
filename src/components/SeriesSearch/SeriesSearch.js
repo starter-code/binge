@@ -20,6 +20,7 @@ export const SeriesSearch = () => {
 
   return (
     <div className="series-search">
+      <h1>Search for your favorite tv series episode ratings</h1>
       <SearchForm onSubmit={onHandleSearchSubmit} />
       <Chart data={chartInfo} />
     </div>

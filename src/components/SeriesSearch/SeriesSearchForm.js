@@ -8,7 +8,7 @@ export const SearchForm = ({ onSubmit }) => {
   };
 
   return (
-    <form className="searchForm" onSubmit={handleSubmit}>
+    <form className="search-form" onSubmit={handleSubmit}>
       <input placeholder="Search Series Here" type="text" ref={inputRef} />
       <input type="submit" />
     </form>

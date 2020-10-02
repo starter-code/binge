@@ -17,7 +17,6 @@ export const HomePage = () => {
 
   return (
     <div>
-      This is the home page
       <div className="tv-show-poster-section">
         {_.map(episodesData, (data, index) => (
           <TVShowPoster key={index} data={data} />

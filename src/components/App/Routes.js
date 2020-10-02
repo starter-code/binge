@@ -6,10 +6,12 @@ import { Chart } from '../Chart/Chart';
 import { ChartWrapper } from '../Chart/ChartWrapper';
 import { SeriesSearch } from '../SeriesSearch/SeriesSearch';
 import { ExamplePage } from '../Pages/ExamplePage';
+import { Header } from '../Main/Header';
 
 export const Routes = () => {
   return (
     <div className="page">
+      <Header />
       <Switch>
         <Route exact path="/" component={HomePage} />
         {/* <Route exact path="/contributors" component={ContributorsPage} /> */}
