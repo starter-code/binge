@@ -1,12 +1,7 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-
-import { HomePage } from '../Pages/HomePage';
-import { Chart } from '../Chart/Chart';
-import { ChartWrapper } from '../Chart/ChartWrapper';
-import { SeriesSearch } from '../SeriesSearch/SeriesSearch';
-import { ExamplePage } from '../Pages/ExamplePage';
 import { Header } from '../Main/Header';
+import { ChartPage, ExamplePage, HomePage } from '../Pages';
 
 export const Routes = () => {
   return (
@@ -18,11 +13,9 @@ export const Routes = () => {
         <Route
           path="/chart/:titleID"
           render={(props) => {
-            return <ChartWrapper {...props} />;
+            return <ChartPage {...props} />;
           }}
         />
-        <Route exact path="/chart" component={Chart} />
-        <Route exact path="/search" component={SeriesSearch} />
         <Route exact path="/example" component={ExamplePage} />
         {/* <Route path="/" component={NotFoundPage} /> */}
       </Switch>

@@ -5,19 +5,23 @@
 
 #### What I did
 
-- 1.
-- 2.
-- 3.
+-
+-
+-
 
 #### Notes / Research / References
 
-- 1
-- 2
+<!-- Insert reference links or tutorial articles-->
+
+-
+-
 
 #### Before/After Preview
 
 - Before:
+<!-- Insert relevant screenshot here -->
 - After:
+<!-- Insert relevant screenshot here -->
 
 #### Checklist
 

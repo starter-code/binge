@@ -21,3 +21,10 @@ export const getMetaData = async (searchTerm) => {
     url: apiUrl + `/meta-data/${searchTerm}`,
   });
 };
+
+export const getTitleMatches = async (searchTerm) => {
+  return await axios({
+    method: 'GET',
+    url: apiUrl + `/get-title-matches/${searchTerm}`,
+  });
+};
