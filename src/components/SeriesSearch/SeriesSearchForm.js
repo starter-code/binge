@@ -1,15 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { getTitleMatches } from '../../api/api';
 import { Link } from 'react-router-dom';
+import { LoadingContext } from '../../contexts/LoadingContext';
 import _ from 'lodash';
 
 export const SeriesSearchForm = () => {
   const [searchResults, setSearchResults] = useState([]);
+  const { setIsLoading } = useContext(LoadingContext);
 
   const onHandleChange = _.debounce(async (text) => {
+    setIsLoading(true);
     const {
       data: { results },
     } = await getTitleMatches(text);
+    setIsLoading(false);
 
     results && results.length && setSearchResults(results);
   }, 1000);

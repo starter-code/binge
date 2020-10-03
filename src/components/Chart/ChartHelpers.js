@@ -112,5 +112,6 @@ export const generateYearsChart = (chartInfo) => {
 export const getColor = (episodeRating, gradient) => {
   let rating = episodeRating * 10;
   let color = gradient[rating];
-  return color;
+  // TODO: make this more obvious. if episode is not rated do grey
+  return episodeRating === 'N/A' ? '#888' : color;
 };

@@ -1,14 +1,18 @@
-import React from 'react';
+import classNames from 'classnames';
+import React, { useContext } from 'react';
 import { Routes } from './Routes';
+import { LoadingContext } from '../../contexts/LoadingContext';
 
-function App() {
+export const App = () => {
+  const { isLoading } = useContext(LoadingContext);
+
+  const appClassNames = classNames('app', {
+    loading: isLoading,
+  });
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <Routes />
-      </header>
+    <div className={appClassNames}>
+      <Routes />
     </div>
   );
-}
-
-export default App;
+};
