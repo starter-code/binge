@@ -2,16 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './scss/index';
 import { App } from './components/App/App';
-import { LoadingProvider } from './contexts/LoadingContext';
+import { AppProvider } from './contexts/AppContext';
 import * as serviceWorker from './serviceWorker';
 import { HashRouter } from 'react-router-dom';
 
 const Application = (
   <HashRouter>
     <React.StrictMode>
-      <LoadingProvider>
+      <AppProvider>
         <App />
-      </LoadingProvider>
+      </AppProvider>
     </React.StrictMode>
   </HashRouter>
 );

@@ -1,19 +1,22 @@
 import React, { useState } from 'react';
 
-export const LoadingContext = React.createContext(null);
+export const AppContext = React.createContext(null);
 
 // This context provider is passed to any component requiring the context
-export const LoadingProvider = ({ children }) => {
+export const AppProvider = ({ children }) => {
   const [isLoading, setIsLoading] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
   return (
-    <LoadingContext.Provider
+    <AppContext.Provider
       value={{
+        isDarkMode,
         isLoading,
+        setIsDarkMode,
         setIsLoading,
       }}
     >
       {children}
-    </LoadingContext.Provider>
+    </AppContext.Provider>
   );
 };

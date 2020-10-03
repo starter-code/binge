@@ -2,12 +2,12 @@ import React, { useEffect, useState, useContext } from 'react';
 import { getHighlyRatedEpisodes } from '../../api/api';
 import { TVShowPoster } from '../Main/TvShowPoster';
 import { SeriesSearchForm } from '../SeriesSearch/SeriesSearchForm';
-import { LoadingContext } from '../../contexts/LoadingContext';
+import { AppContext } from '../../contexts/AppContext';
 import { _ } from '../../utils';
 
 // http://localhost:8080/
 export const HomePage = () => {
-  const { setIsLoading } = useContext(LoadingContext);
+  const { setIsLoading } = useContext(AppContext);
   const [episodesData, setEpisodesData] = useState([]);
 
   const getData = () => {

@@ -1,4 +1,5 @@
 .app {
+  // TODO: refactor this, these properties should not ideally be on the .app level
   text-align: center;
   min-height: 100vh;
   display: flex;
@@ -7,7 +8,7 @@
 }
 
 .loading:after {
-  animation: loading-line 4s ease-in-out infinite;
+  animation: loading-line 3s ease-in-out infinite;
   border-bottom: 10px solid black;
   content: '';
   height: 10px;

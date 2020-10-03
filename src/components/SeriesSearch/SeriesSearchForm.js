@@ -1,12 +1,12 @@
 import React, { useState, useContext } from 'react';
 import { getTitleMatches } from '../../api/api';
 import { Link } from 'react-router-dom';
-import { LoadingContext } from '../../contexts/LoadingContext';
+import { AppContext } from '../../contexts/AppContext';
 import _ from 'lodash';
 
 export const SeriesSearchForm = () => {
   const [searchResults, setSearchResults] = useState([]);
-  const { setIsLoading } = useContext(LoadingContext);
+  const { setIsLoading } = useContext(AppContext);
 
   const onHandleChange = _.debounce(async (text) => {
     setIsLoading(true);

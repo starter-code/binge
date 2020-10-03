@@ -1,13 +1,14 @@
 import classNames from 'classnames';
 import React, { useContext } from 'react';
 import { Routes } from './Routes';
-import { LoadingContext } from '../../contexts/LoadingContext';
+import { AppContext } from '../../contexts/AppContext';
 
 export const App = () => {
-  const { isLoading } = useContext(LoadingContext);
+  const { isLoading, isDarkMode } = useContext(AppContext);
 
   const appClassNames = classNames('app', {
     loading: isLoading,
+    'dark-mode': isDarkMode,
   });
 
   return (

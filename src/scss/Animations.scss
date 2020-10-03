@@ -1,10 +1,10 @@
 @keyframes loading-line {
-  0%,
-  100% {
-    // transform: translateX(-100%);
-    left: 0;
+  0% {
+    transform: translateX(-100%);
+    width: 10vw;
   }
-  50% {
+  100% {
     transform: translateX(500%);
+    width: 40vw;
   }
 }

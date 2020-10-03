@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { Chart } from '../Chart/Chart';
 import { getEpisodes } from '../../api/api';
-import { LoadingContext } from '../../contexts/LoadingContext';
+import { AppContext } from '../../contexts/AppContext';
 
 // http://localhost:8080/#/chart/tt5753856
 export const ChartPage = (props) => {
-  const { setIsLoading } = useContext(LoadingContext);
+  const { setIsLoading } = useContext(AppContext);
   const [data, setData] = useState([]);
 
   const getData = () => {
