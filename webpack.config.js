@@ -17,10 +17,8 @@ module.exports = {
         exclude: /node_modules/,
         loader: 'eslint-loader',
         options: {
-          fix: true,
-          emitError: true,
+          // allow errors to not stop compiling
           emitWarning: true,
-          // failOnError: true,
         },
       },
       {
@@ -54,6 +52,5 @@ module.exports = {
     contentBase: path.join(__dirname, 'build'),
     liveReload: false,
     open: true,
-    // overlay: true,
   },
 };

@@ -4,6 +4,7 @@ import { results } from '../../example-data/op.json';
 
 const data = results.slice(0, 930);
 
+// http://localhost:8080/#/example
 export const ExamplePage = () => {
   return (
     <div>
@@ -12,5 +13,3 @@ export const ExamplePage = () => {
     </div>
   );
 };
-
-// http://localhost:8080/#/example

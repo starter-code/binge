@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Chart } from './Chart';
+import { Chart } from '../Chart/Chart';
 import { getEpisodes } from '../../api/api';
 
-export const ChartWrapper = (props) => {
+// http://localhost:8080/#/chart/tt5753856
+export const ChartPage = (props) => {
   const [data, setData] = useState([]);
 
   const getData = () => {
