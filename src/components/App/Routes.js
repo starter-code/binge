@@ -1,7 +1,13 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { Header } from '../Main/Header';
-import { ChartPage, ExamplePage, HomePage } from '../Pages';
+import {
+  ChartPage,
+  ExamplePage,
+  HomePage,
+  NotFoundPage,
+  ContributorsPage,
+} from '../Pages';
 
 export const Routes = () => {
   return (
@@ -9,7 +15,7 @@ export const Routes = () => {
       <Header />
       <Switch>
         <Route exact path="/" component={HomePage} />
-        {/* <Route exact path="/contributors" component={ContributorsPage} /> */}
+        <Route exact path="/contributors" component={ContributorsPage} />
         <Route
           path="/chart/:titleID"
           render={(props) => {
@@ -17,7 +23,7 @@ export const Routes = () => {
           }}
         />
         <Route exact path="/example" component={ExamplePage} />
-        {/* <Route path="/" component={NotFoundPage} /> */}
+        <Route path="/" component={NotFoundPage} />
       </Switch>
     </div>
   );
