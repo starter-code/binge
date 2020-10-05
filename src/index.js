@@ -1,14 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './scss/index';
-import App from './components/App/App';
+import { App } from './components/App/App';
+import { AppProvider } from './contexts/AppContext';
 import * as serviceWorker from './serviceWorker';
 import { HashRouter } from 'react-router-dom';
 
 const Application = (
   <HashRouter>
     <React.StrictMode>
-      <App />
+      <AppProvider>
+        <App />
+      </AppProvider>
     </React.StrictMode>
   </HashRouter>
 );
