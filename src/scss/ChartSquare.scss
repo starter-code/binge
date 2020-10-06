@@ -6,6 +6,15 @@
   line-height: 60px;
   margin-left: -1px;
   margin-bottom: -1px;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  & > a {
+    color: inherit;
+    text-decoration: none;
+  }
 }
 
 .season-labels {

@@ -1,10 +1,17 @@
 import apiUrl from './apiConfig';
 import axios from 'axios';
 
-export const getEpisodes = async (searchTerm) => {
+export const getData = async (titleID) => {
   return await axios({
     method: 'GET',
-    url: apiUrl + `/episode-data/${searchTerm}`,
+    url: apiUrl + `/data/${titleID}`,
+  });
+};
+
+export const getEpisodes = async (titleID) => {
+  return await axios({
+    method: 'GET',
+    url: apiUrl + `/episode-data/${titleID}`,
   });
 };
 
@@ -15,16 +22,24 @@ export const getHighlyRatedEpisodes = async (limit) => {
   });
 };
 
-export const getMetaData = async (searchTerm) => {
+export const getMetaData = async (titleID) => {
   return await axios({
     method: 'GET',
-    url: apiUrl + `/meta-data/${searchTerm}`,
+    url: apiUrl + `/meta-data/${titleID}`,
   });
 };
 
-export const getTitleMatches = async (searchTerm) => {
+export const getTitleMatches = async (titleID) => {
   return await axios({
     method: 'GET',
-    url: apiUrl + `/get-title-matches/${searchTerm}`,
+    url: apiUrl + `/get-title-matches/${titleID}`,
   });
+};
+
+export const apiEndpoints = {
+  getData,
+  getEpisodes,
+  getHighlyRatedEpisodes,
+  getMetaData,
+  getTitleMatches,
 };

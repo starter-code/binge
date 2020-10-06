@@ -1,15 +1,20 @@
+### Version 0.3.0 (in progress)
+
+- Create a tool-tip to display data on hover on episode data
+- Flesh out home page display
+
+### Version 0.2.0
+
+- Create visual front end display of data
+- Create home page display
+- Add universal loading animation
+
 ### Version 0.1.0
 
 - Chart of series episode data
 - Basic search functionality for getting data of the series
 - Toggle to switch between year of episodes and season of series
 - Basic visual coloring done to chart heat map
-
-### Version 0.2.0 (In-Progress)
-
-- Create visual front end display of data
-- Create home page display
-- Create a tool-tip to display data on hover on episode data
 
 ### Quality Control
 
