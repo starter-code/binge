@@ -2,21 +2,22 @@ import { _ } from '../../utils';
 import React, { useState } from 'react';
 
 import { ChartSquare } from './ChartSquare';
-import { generateSeasonsChart, generateYearsChart } from './ChartHelpers';
+import { generateSeasonsChart, generateYearsChart } from '../../utils';
 import { CHART_TYPES } from '../../constants/constants';
 
+const { SEASON, YEAR } = CHART_TYPES;
+
 export const Chart = ({ data: chartInfo }) => {
-  const [chartType, setChartType] = useState(CHART_TYPES.SEASON);
+  const [chartType, setChartType] = useState(SEASON);
 
   const onToggleChart = () => {
-    const newChartType =
-      chartType === CHART_TYPES.SEASON ? CHART_TYPES.YEAR : CHART_TYPES.SEASON;
-    setChartType(newChartType);
+    const nextChartType = chartType === SEASON ? YEAR : SEASON;
+    setChartType(nextChartType);
   };
 
   const view = {
-    [CHART_TYPES.SEASON]: generateSeasonsChart(chartInfo),
-    [CHART_TYPES.YEAR]: generateYearsChart(chartInfo),
+    [SEASON]: generateSeasonsChart(chartInfo),
+    [YEAR]: generateYearsChart(chartInfo),
   };
 
   const newChartInfo = view[chartType];

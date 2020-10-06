@@ -1,5 +1,13 @@
-import { _ } from '../../utils';
-import { CHART_SQUARE_TYPES } from '../../constants/constants';
+import { _ } from '.';
+import { CHART_SQUARE_TYPES } from '../constants/constants';
+
+const {
+  EPISODE_DATA,
+  EPISODE_NUMBER_LABELS,
+  SEASON_LABELS,
+  YEAR_LABELS,
+} = CHART_SQUARE_TYPES;
+
 /**
  * Generates y-axis season labels for given series
  * @param {Array} data
@@ -11,7 +19,7 @@ export const generateSeasonLabels = (inputData) => {
   _.each(inputData, (episodeData) => {
     if (episodeData.episode === 1 && episodeData.season === seasonCount) {
       const label = {
-        type: CHART_SQUARE_TYPES.SEASON_LABELS,
+        type: SEASON_LABELS,
         data: {
           season: seasonCount,
           episode: 0,
@@ -35,7 +43,7 @@ export const generateYearLabels = (inputData) => {
     let { year } = episodeData;
     if (!yearsReleased[year]) {
       const label = {
-        type: CHART_SQUARE_TYPES.YEAR_LABELS,
+        type: YEAR_LABELS,
         data: {
           year,
           episode: 0,
@@ -68,7 +76,7 @@ export const generateEpisodeNumberLabels = (inputData) => {
   _.each(inputData, (episodeData) => {
     if (episodeData.episode > maxEpisodeCount) {
       const label = {
-        type: CHART_SQUARE_TYPES.EPISODE_NUMBER_LABELS,
+        type: EPISODE_NUMBER_LABELS,
         data: {
           episode: episodeData.episode,
           season: 999, // placeholder number so episode label numbers are always on the bottom
@@ -86,7 +94,7 @@ export const generateSeasonsChart = (chartInfo) => {
   const episodeLabels = generateEpisodeNumberLabels(chartInfo);
   const chartData = _.map(chartInfo, (data) => {
     const output = {
-      type: CHART_SQUARE_TYPES.EPISODE_DATA,
+      type: EPISODE_DATA,
       data,
     };
     return output;
@@ -100,7 +108,7 @@ export const generateYearsChart = (chartInfo) => {
   const episodeLabels = generateEpisodeNumberLabels(data);
   const chartData = _.map(data, (data) => {
     const output = {
-      type: CHART_SQUARE_TYPES.EPISODE_DATA,
+      type: EPISODE_DATA,
       data,
     };
     return output;
@@ -112,6 +120,14 @@ export const generateYearsChart = (chartInfo) => {
 export const getColor = (episodeRating, gradient) => {
   let rating = episodeRating * 10;
   let color = gradient[rating];
-  // TODO: make this more obvious. if episode is not rated do grey
-  return episodeRating === 'N/A' ? '#888' : color;
+
+  // Duct-tape fix
+  // Fixes max rating returning color #FFF
+  if (rating === 100) {
+    color = '#001100';
+  } else if (_.isNaN(rating)) {
+    color = '#888';
+  }
+
+  return color;
 };
