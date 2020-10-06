@@ -35,25 +35,25 @@ export const ChartSquare = ({ data, type }) => {
   });
 
   const renderChartData = (inputType, inputData) => {
-    let output = '';
+    let htmlText = '';
     const { episode, rating, season, year } = inputData;
     switch (inputType) {
       case EPISODE_DATA:
-        output = rating;
+        htmlText = rating;
         break;
       case EPISODE_NUMBER_LABELS:
-        output = episode;
+        htmlText = episode;
         break;
       case SEASON_LABELS:
-        output = season;
+        htmlText = season;
         break;
       case YEAR_LABELS:
-        output = year;
+        htmlText = year;
         break;
       default:
         throw new Error('Invalid Type');
     }
-    return output;
+    return htmlText;
   };
 
   return (
