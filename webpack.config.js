@@ -13,15 +13,6 @@ module.exports = {
         use: ['babel-loader'],
       },
       {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loader: 'eslint-loader',
-        options: {
-          // allow errors to not stop compiling
-          emitWarning: true,
-        },
-      },
-      {
         test: /\.s[ac]ss$/i,
         use: ['style-loader', 'css-loader', 'sass-loader'],
       },
