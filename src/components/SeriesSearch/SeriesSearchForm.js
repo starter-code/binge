@@ -31,7 +31,7 @@ export const SeriesSearchForm = () => {
           onChange={(event) => onHandleChange(event.target.value)}
         />
       </form>
-      <div id="search-results-overlay">
+      <div className="search-results-overlay">
         {_.map(searchResults, (result, index) => {
           const {
             imageURL,
@@ -39,19 +39,25 @@ export const SeriesSearchForm = () => {
             title,
             titleID,
             seriesStartYear,
-            seriesEndYear,
+            seriesEndYear = 'Present',
           } = result;
 
           return (
-            <div key={index}>
+            <div className="search-series-suggestion" key={index}>
               <Link to={`chart/${titleID}`}>
-                <p>
-                  {title} ({numberOfEpisodes})
-                </p>
-                <p>
-                  {seriesStartYear}-{seriesEndYear}
-                </p>
-                <img src={imageURL} width={50} />
+                <img
+                  className="search-series-img"
+                  alt="tv show poster image"
+                  src={imageURL}
+                />
+                <div className="series-search-info">
+                  <p className="search-series-title">
+                    {title} ({numberOfEpisodes})
+                  </p>
+                  <p className="search-series-year">
+                    {seriesStartYear}-{seriesEndYear}
+                  </p>
+                </div>
               </Link>
             </div>
           );
