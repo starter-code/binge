@@ -1,6 +1,12 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
+const ESLintPlugin = require('eslint-webpack-plugin');
+
+const eslintOptions = {
+  extensions: '.js',
+  emitWarning: true,
+};
 
 module.exports = {
   mode: 'development',
@@ -11,15 +17,6 @@ module.exports = {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: ['babel-loader'],
-      },
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loader: 'eslint-loader',
-        options: {
-          // allow errors to not stop compiling
-          emitWarning: true,
-        },
       },
       {
         test: /\.s[ac]ss$/i,
@@ -46,6 +43,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './public/index.html',
     }),
+    new ESLintPlugin(eslintOptions),
   ],
   devtool: 'eval-cheap-module-source-map',
   devServer: {
