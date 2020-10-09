@@ -17,7 +17,9 @@
     "css-loader": "^3.5.3",
     "gradient-color": "^2.0.1",
     "html-webpack-plugin": "^4.3.0",
-    "lodash": "^4.17.20",
+    "husky": "^4.3.0",
+    "lint-staged": "^10.4.0",
+    "lodash": "^4.17.15",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-hot-loader": "^4.12.21",
@@ -25,14 +27,16 @@
     "react-scripts": "^3.4.3",
     "sass": "^1.26.8",
     "sass-loader": "^8.0.2",
-    "style-loader": "^1.2.1"
+    "style-loader": "^1.2.1",
+    "prettier": "^2.1.2"
   },
   "scripts": {
     "start": "webpack-dev-server --hot",
     "clean": "rm -rf node_modules && npm clear cache",
     "clean:webpack": "rm -rf dist",
     "build:dev": "webpack-dev-server",
-    "build:prod": "webpack -p"
+    "build:prod": "webpack -p",
+    "lint": "eslint --fix --ext .js ."
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -50,7 +54,20 @@
     ]
   },
   "devDependencies": {
+    "eslint": "^7.10.0",
+    "eslint-config-prettier": "^6.12.0",
     "eslint-loader": "^4.0.2",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.21.3",
+    "eslint-plugin-react-hooks": "^4.1.2",
     "webpack-cli": "^3.3.11"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": "eslint --cache --fix"
   }
 }
