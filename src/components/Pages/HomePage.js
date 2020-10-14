@@ -1,20 +1,22 @@
 import React, { useEffect, useState, useContext } from 'react';
-import { getHighlyRatedEpisodes } from '../../api/api';
+import { TvShowPosterSkeleton } from '../Main/TvShowPosterSkeleton';
 import { TVShowPoster } from '../Main/TvShowPoster';
 import { SeriesSearchForm } from '../SeriesSearch/SeriesSearchForm';
 import { AppContext } from '../../contexts/AppContext';
+import { getHighlyRatedEpisodes } from '../../api/api';
+import { PREVIEW_SERIES_COUNT } from '../../constants/constants';
 import { _ } from '../../utils';
 
 // http://localhost:8080/
 export const HomePage = () => {
   const { setIsLoading } = useContext(AppContext);
-  const [episodesData, setEpisodesData] = useState([]);
+  const [tvPosterData, setTvPosterData] = useState([]);
 
   const getData = () => {
-    const response = getHighlyRatedEpisodes(5);
+    const response = getHighlyRatedEpisodes(PREVIEW_SERIES_COUNT);
     setIsLoading(true);
     response.then(({ data }) => {
-      setEpisodesData(data.results);
+      setTvPosterData(data.results);
       setIsLoading(false);
     });
   };
@@ -26,10 +28,17 @@ export const HomePage = () => {
   }, []);
 
   return (
-    <div>
+    <div className="home-page">
       <SeriesSearchForm />
       <div className="tv-show-poster-section">
-        {_.map(episodesData, (data, index) => (
+        {tvPosterData && !tvPosterData.length && (
+          <React.Fragment>
+            {[...Array(PREVIEW_SERIES_COUNT)].map((item, index) => {
+              return <TvShowPosterSkeleton key={index} />;
+            })}
+          </React.Fragment>
+        )}
+        {_.map(tvPosterData, (data, index) => (
           <TVShowPoster key={index} data={data} />
         ))}
       </div>

@@ -23,3 +23,6 @@ export const CHART_SQUARE_TYPES = {
   SEASON_LABELS: 'seasonLabels',
   YEAR_LABELS: 'yearLabels',
 };
+
+// Number of tv show poster showing
+export const PREVIEW_SERIES_COUNT = 5;
