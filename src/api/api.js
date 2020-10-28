@@ -4,14 +4,14 @@ import axios from 'axios';
 export const getData = async (titleID) => {
   return await axios({
     method: 'GET',
-    url: apiUrl + `/data/${titleID}`,
+    url: apiUrl + `/get-data/${titleID}`,
   });
 };
 
 export const getEpisodes = async (titleID) => {
   return await axios({
     method: 'GET',
-    url: apiUrl + `/episode-data/${titleID}`,
+    url: apiUrl + `/get-episode-data/${titleID}`,
   });
 };
 
@@ -25,7 +25,7 @@ export const getHighlyRatedEpisodes = async (limit) => {
 export const getMetaData = async (titleID) => {
   return await axios({
     method: 'GET',
-    url: apiUrl + `/meta-data/${titleID}`,
+    url: apiUrl + `/get-meta-data/${titleID}`,
   });
 };
 

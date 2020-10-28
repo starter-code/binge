@@ -1,4 +1,10 @@
 {
   "editor.formatOnSave": true,
-  "editor.wordWrapColumn": 120
+  "editor.wordWrapColumn": 120,
+  "workbench.colorCustomizations": {
+    "activityBar.background": "#d0f040",
+    "activityBar.foreground": "#000000",
+    "titleBar.activeBackground": "#d0f040",
+    "titleBar.activeForeground": "#000000"
+  }
 }
