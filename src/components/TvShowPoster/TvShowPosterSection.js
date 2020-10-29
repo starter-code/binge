@@ -1,0 +1,32 @@
+import PropTypes from 'prop-types';
+import React from 'react';
+import { _ } from 'utils';
+
+import { TVShowPoster } from './TvShowPoster';
+import { TvShowPosterSkeleton } from './TvShowPosterSkeleton';
+import { PREVIEW_SERIES_COUNT } from '../../constants/constants';
+
+export const TvShowPosterSection = ({ data, heading }) => {
+  return (
+    <div>
+      <h1>{heading}</h1>
+      <div className="tv-show-poster-section">
+        {data && !data.length && (
+          <React.Fragment>
+            {_.map([...Array(PREVIEW_SERIES_COUNT)], (_item, index) => (
+              <TvShowPosterSkeleton key={index} />
+            ))}
+          </React.Fragment>
+        )}
+        {_.map(data, (tvShowPosterData, index) => (
+          <TVShowPoster key={index} data={tvShowPosterData} />
+        ))}
+      </div>
+    </div>
+  );
+};
+
+TvShowPosterSection.propTypes = {
+  data: PropTypes.arrayOf(PropTypes.object),
+  heading: PropTypes.string,
+};

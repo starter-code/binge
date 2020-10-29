@@ -1,8 +1,9 @@
+import { getTitleMatches } from 'apiEndpoints';
 import React, { useState, useContext } from 'react';
-import { getTitleMatches } from '../../api/api';
 import { Link } from 'react-router-dom';
+import { _ } from 'utils';
+
 import { AppContext } from '../../contexts/AppContext';
-import _ from 'lodash';
 
 export const SeriesSearchForm = () => {
   const [searchResults, setSearchResults] = useState([]);

@@ -1,24 +1,39 @@
+import {
+  getHighlyRatedShows,
+  getRecentlySearchedShows,
+  getRandomShows,
+} from 'apiEndpoints';
+import { SeriesSearchForm } from 'components/SeriesSearch/SeriesSearchForm';
+import { TvShowPosterSection } from 'components/TvShowPoster/TvShowPosterSection';
+import { AppContext } from 'contexts/AppContext';
+import { PREVIEW_SERIES_COUNT } from 'constants';
 import React, { useEffect, useState, useContext } from 'react';
-import { TvShowPosterSkeleton } from '../Main/TvShowPosterSkeleton';
-import { TVShowPoster } from '../Main/TvShowPoster';
-import { SeriesSearchForm } from '../SeriesSearch/SeriesSearchForm';
-import { AppContext } from '../../contexts/AppContext';
-import { getHighlyRatedEpisodes } from '../../api/api';
-import { PREVIEW_SERIES_COUNT } from '../../constants/constants';
-import { _ } from '../../utils';
+import { _ } from 'utils';
 
 // http://localhost:8080/
 export const HomePage = () => {
   const { setIsLoading } = useContext(AppContext);
-  const [tvPosterData, setTvPosterData] = useState([]);
+  const [state, setState] = useState({
+    topRated: [],
+    recent: [],
+    random: [],
+  });
 
-  const getData = () => {
-    const response = getHighlyRatedEpisodes(PREVIEW_SERIES_COUNT);
+  const getData = async () => {
+    const requests = [
+      getHighlyRatedShows(PREVIEW_SERIES_COUNT),
+      getRecentlySearchedShows(PREVIEW_SERIES_COUNT),
+      getRandomShows(PREVIEW_SERIES_COUNT),
+    ];
     setIsLoading(true);
-    response.then(({ data }) => {
-      setTvPosterData(data.results);
-      setIsLoading(false);
-    });
+
+    const responses = await Promise.all(requests);
+    const [topRated, recent, random] = _.map(responses, (response) =>
+      _.get(response, 'data.results'),
+    );
+
+    setState({ topRated, recent, random });
+    setIsLoading(false);
   };
 
   useEffect(() => {
@@ -30,18 +45,9 @@ export const HomePage = () => {
   return (
     <div className="home-page">
       <SeriesSearchForm />
-      <div className="tv-show-poster-section">
-        {tvPosterData && !tvPosterData.length && (
-          <React.Fragment>
-            {[...Array(PREVIEW_SERIES_COUNT)].map((item, index) => {
-              return <TvShowPosterSkeleton key={index} />;
-            })}
-          </React.Fragment>
-        )}
-        {_.map(tvPosterData, (data, index) => (
-          <TVShowPoster key={index} data={data} />
-        ))}
-      </div>
+      <TvShowPosterSection data={state.topRated} heading="Top Rated TV Shows" />
+      <TvShowPosterSection data={state.recent} heading="Recently Searched" />
+      <TvShowPosterSection data={state.random} heading="Random" />
     </div>
   );
 };

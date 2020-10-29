@@ -15,9 +15,25 @@ export const getEpisodes = async (titleID) => {
   });
 };
 
-export const getHighlyRatedEpisodes = async (limit) => {
+export const getHighlyRatedShows = async (limit) => {
   return await axios({
     method: 'GET',
+    url: apiUrl + `/get-top-rated-shows?limit=${limit}`,
+  });
+};
+
+export const getRecentlySearchedShows = async (limit) => {
+  return await axios({
+    method: 'GET',
+    // TODO replace this endpoint. currently a placeholder
+    url: apiUrl + `/get-top-rated-shows?limit=${limit}`,
+  });
+};
+
+export const getRandomShows = async (limit) => {
+  return await axios({
+    method: 'GET',
+    // TODO replace this endpoint. currently a placeholder
     url: apiUrl + `/get-top-rated-shows?limit=${limit}`,
   });
 };
@@ -39,7 +55,9 @@ export const getTitleMatches = async (titleID) => {
 export const apiEndpoints = {
   getData,
   getEpisodes,
-  getHighlyRatedEpisodes,
+  getHighlyRatedShows,
   getMetaData,
+  getRandomShows,
+  getRecentlySearchedShows,
   getTitleMatches,
 };

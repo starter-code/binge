@@ -1,8 +1,7 @@
-import { _ } from '../../utils';
 import React, { useState } from 'react';
+import { generateSeasonsChart, generateYearsChart, _ } from 'utils';
 
 import { ChartSquare } from './ChartSquare';
-import { generateSeasonsChart, generateYearsChart } from '../../utils';
 import { CHART_TYPES } from '../../constants/constants';
 
 const { SEASON, YEAR } = CHART_TYPES;
