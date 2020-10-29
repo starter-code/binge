@@ -3,10 +3,10 @@ import { Route, Switch } from 'react-router-dom';
 import { Header } from '../Main/Header';
 import {
   ChartPage,
+  ContributorsPage,
   ExamplePage,
   HomePage,
   NotFoundPage,
-  ContributorsPage,
 } from '../Pages';
 
 export const Routes = () => {

@@ -27,11 +27,11 @@ module.exports = {
   resolve: {
     extensions: ['*', '.js', '.jsx', '.scss'],
     alias: {
-      apiEndpoints: path.resolve(__dirname, 'src/api/apiEndpoints'),
-      components: path.resolve(__dirname, 'src/components'),
-      constants: path.resolve(__dirname, 'src/constants/constants'),
-      contexts: path.resolve(__dirname, 'src/contexts'),
-      utils: path.resolve(__dirname, 'src/utils'),
+      'src/apiEndpoints': path.resolve(__dirname, 'src/api/apiEndpoints'),
+      'src/components': path.resolve(__dirname, 'src/components'),
+      'src/constants': path.resolve(__dirname, 'src/constants/constants'),
+      'src/contexts': path.resolve(__dirname, 'src/contexts'),
+      'src/utils': path.resolve(__dirname, 'src/utils'),
     },
   },
   output: {

@@ -37,6 +37,13 @@
       }
     ],
     "semi": ["error", "always"],
+    "sort-imports": ["error", {
+      "ignoreCase": true,
+      "ignoreDeclarationSort": true,
+      "ignoreMemberSort": false,
+      "memberSyntaxSortOrder": ["single", "all", "multiple", "none"],
+      "allowSeparatedGroups": false
+  }],
     "react/prop-types": 0,
     "comma-dangle": ["error", "always-multiline"],
     "prettier/prettier": 1

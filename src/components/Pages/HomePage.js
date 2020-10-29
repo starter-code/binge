@@ -1,14 +1,15 @@
+import React, { useContext, useEffect, useState } from 'react';
+
 import {
   getHighlyRatedShows,
-  getRecentlySearchedShows,
   getRandomShows,
-} from 'apiEndpoints';
-import { SeriesSearchForm } from 'components/SeriesSearch/SeriesSearchForm';
-import { TvShowPosterSection } from 'components/TvShowPoster/TvShowPosterSection';
-import { AppContext } from 'contexts/AppContext';
-import { PREVIEW_SERIES_COUNT } from 'constants';
-import React, { useEffect, useState, useContext } from 'react';
-import { _ } from 'utils';
+  getRecentlySearchedShows,
+} from 'src/apiEndpoints';
+import { SeriesSearchForm } from 'src/components/SeriesSearch/SeriesSearchForm';
+import { TvShowPosterSection } from 'src/components/TvShowPoster/TvShowPosterSection';
+import { AppContext } from 'src/contexts/AppContext';
+import { PREVIEW_SERIES_COUNT } from 'src/constants';
+import { _ } from 'src/utils';
 
 // http://localhost:8080/
 export const HomePage = () => {

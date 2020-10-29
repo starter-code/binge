@@ -1,9 +1,9 @@
 import classNameContext from 'classnames';
 import gradient from 'gradient-color';
 import React from 'react';
-import { getColor } from 'utils';
 
-import { COLOR_GRADIENT, CHART_SQUARE_TYPES } from '../../constants/constants';
+import { CHART_SQUARE_TYPES, COLOR_GRADIENT } from 'src/constants';
+import { getColor } from 'src/utils';
 
 const {
   EPISODE_DATA,

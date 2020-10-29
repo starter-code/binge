@@ -1,10 +1,11 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { _ } from 'utils';
+
+import { PREVIEW_SERIES_COUNT } from 'src/constants';
+import { _ } from 'src/utils';
 
 import { TVShowPoster } from './TvShowPoster';
 import { TvShowPosterSkeleton } from './TvShowPosterSkeleton';
-import { PREVIEW_SERIES_COUNT } from '../../constants/constants';
 
 export const TvShowPosterSection = ({ data, heading }) => {
   return (

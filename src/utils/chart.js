@@ -1,5 +1,6 @@
-import { _ } from '.';
-import { CHART_SQUARE_TYPES } from '../constants/constants';
+import { CHART_SQUARE_TYPES } from 'src/constants';
+
+import { _ } from './_';
 
 const {
   EPISODE_DATA,

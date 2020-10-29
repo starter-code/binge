@@ -1,9 +1,9 @@
-import { getTitleMatches } from 'apiEndpoints';
-import React, { useState, useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { _ } from 'utils';
 
-import { AppContext } from '../../contexts/AppContext';
+import { getTitleMatches } from 'src/apiEndpoints';
+import { AppContext } from 'src/contexts/AppContext';
+import { _ } from 'src/utils';
 
 export const SeriesSearchForm = () => {
   const [searchResults, setSearchResults] = useState([]);
