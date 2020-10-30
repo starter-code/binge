@@ -44,7 +44,7 @@
       "memberSyntaxSortOrder": ["single", "all", "multiple", "none"],
       "allowSeparatedGroups": false
   }],
-    "react/prop-types": 0,
+    "react/prop-types": 1,
     "comma-dangle": ["error", "always-multiline"],
     "prettier/prettier": 1
   }

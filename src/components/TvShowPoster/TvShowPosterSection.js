@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
+import { TMetaData } from 'prop-types.d.js';
 import { PREVIEW_SERIES_COUNT } from 'src/constants';
 import { _ } from 'src/utils';
 
@@ -28,6 +29,6 @@ export const TvShowPosterSection = ({ data, heading }) => {
 };
 
 TvShowPosterSection.propTypes = {
-  data: PropTypes.arrayOf(PropTypes.object),
+  data: PropTypes.arrayOf(TMetaData),
   heading: PropTypes.string,
 };

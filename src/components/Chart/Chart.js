@@ -1,5 +1,7 @@
+import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 
+import { TEpisodeData } from 'prop-types.d.js';
 import { CHART_TYPES } from 'src/constants';
 import { _, generateSeasonsChart, generateYearsChart } from 'src/utils';
 
@@ -40,4 +42,8 @@ export const Chart = ({ data: chartInfo }) => {
       </div>
     </div>
   );
+};
+
+Chart.propTypes = {
+  data: PropTypes.arrayOf(TEpisodeData),
 };

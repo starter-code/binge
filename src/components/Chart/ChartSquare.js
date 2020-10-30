@@ -1,5 +1,6 @@
 import classNameContext from 'classnames';
 import gradient from 'gradient-color';
+import PropTypes from 'prop-types';
 import React from 'react';
 
 import { CHART_SQUARE_TYPES, COLOR_GRADIENT } from 'src/constants';
@@ -13,7 +14,7 @@ const {
 } = CHART_SQUARE_TYPES;
 
 export const ChartSquare = ({ data, type }) => {
-  const { rating, season: seasonNumber, episode: episodeNumber } = data;
+  const { rating, season: seasonNumber, episode: episodeNumber, url } = data;
 
   // TODO: create a more verbose hex decimal color scheme
   const colorsGradient = gradient(COLOR_GRADIENT, 100);
@@ -59,7 +60,7 @@ export const ChartSquare = ({ data, type }) => {
   return (
     <div className={chartSquareClassNames} style={style}>
       {type === EPISODE_DATA ? (
-        <a href={data.url} target="_blank" rel="noopener noreferrer">
+        <a href={url} target="_blank" rel="noopener noreferrer">
           {renderChartData(type, data)}
         </a>
       ) : (
@@ -67,4 +68,14 @@ export const ChartSquare = ({ data, type }) => {
       )}
     </div>
   );
+};
+
+ChartSquare.propTypes = {
+  data: PropTypes.shape({
+    rating: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    season: PropTypes.number,
+    episode: PropTypes.number,
+    url: PropTypes.string,
+  }),
+  type: PropTypes.string,
 };

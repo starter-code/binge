@@ -32,6 +32,10 @@ module.exports = {
       'src/constants': path.resolve(__dirname, 'src/constants/constants'),
       'src/contexts': path.resolve(__dirname, 'src/contexts'),
       'src/utils': path.resolve(__dirname, 'src/utils'),
+      'prop-types.d.js': path.resolve(
+        __dirname,
+        'src/prop-types/prop-types.d.js',
+      ),
     },
   },
   output: {

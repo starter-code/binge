@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
@@ -11,4 +12,12 @@ export const TVShowPoster = ({ data }) => {
       ></img>
     </Link>
   );
+};
+
+TVShowPoster.propTypes = {
+  data: PropTypes.shape({
+    titleID: PropTypes.string,
+    title: PropTypes.string,
+    imageURL: PropTypes.string,
+  }),
 };
