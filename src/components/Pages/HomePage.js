@@ -7,6 +7,7 @@ import {
 } from 'src/apiEndpoints';
 import { SeriesSearchForm } from 'src/components/SeriesSearch/SeriesSearchForm';
 import { TvShowPosterSection } from 'src/components/TvShowPoster/TvShowPosterSection';
+import { Footer, Header, Hero } from 'src/components/Main';
 import { AppContext } from 'src/contexts/AppContext';
 import { PREVIEW_SERIES_COUNT } from 'src/constants';
 import { _ } from 'src/utils';
@@ -45,10 +46,13 @@ export const HomePage = () => {
 
   return (
     <div className="home-page">
+      <Hero />
+      <Header />
       <SeriesSearchForm />
       <TvShowPosterSection data={state.topRated} heading="Top Rated TV Shows" />
       <TvShowPosterSection data={state.recent} heading="Recently Searched" />
       <TvShowPosterSection data={state.random} heading="Random" />
+      <Footer />
     </div>
   );
 };

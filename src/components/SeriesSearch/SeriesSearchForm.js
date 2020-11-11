@@ -11,13 +11,17 @@ export const SeriesSearchForm = () => {
 
   const onHandleChange = _.debounce(async (text) => {
     setIsLoading(true);
-    const {
-      data: { results },
-    } = await getTitleMatches(text);
-    setIsLoading(false);
 
-    results && results.length && setSearchResults(results);
-  }, 1000);
+    if (text.length) {
+      const {
+        data: { results },
+      } = await getTitleMatches(text);
+
+      results && results.length && setSearchResults(results);
+    }
+
+    setIsLoading(false);
+  }, 250);
 
   const onHandleSubmit = (event) => {
     event.preventDefault();

@@ -3,6 +3,7 @@ import React, { useContext, useEffect, useState } from 'react';
 
 import { apiEndpoints } from 'src/apiEndpoints';
 import { AppContext } from 'src/contexts/AppContext';
+import { Header } from 'src/components/Main';
 
 import { Chart } from '../Chart/Chart';
 
@@ -26,7 +27,8 @@ export const ChartPage = ({ match }) => {
   }, []);
 
   return (
-    <div>
+    <div className="chart-page">
+      <Header />
       <h2>{metaData.title}</h2>
       <Chart data={episodeData} />
     </div>

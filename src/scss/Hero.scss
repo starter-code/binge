@@ -1,0 +1,25 @@
+.hero {
+  align-items: baseline;
+  background-color: #005585;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+
+  .hero-text {
+    padding: 1em;
+
+    &.fading-in {
+      animation: fading-in-hero-text 1s ease-in-out;
+    }
+
+    &.visible {
+      opacity: 1;
+    }
+
+    &.hidden {
+      opacity: 0;
+    }
+  }
+}

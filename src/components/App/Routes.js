@@ -1,7 +1,6 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
-import { Header } from '../Main/Header';
 import {
   ChartPage,
   ContributorsPage,
@@ -13,7 +12,6 @@ import {
 export const Routes = () => {
   return (
     <div className="page">
-      <Header />
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route exact path="/contributors" component={ContributorsPage} />
