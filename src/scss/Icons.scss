@@ -11,3 +11,11 @@
     background-color: #cccccc;
   }
 }
+
+.collapse {
+  width: 32px;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}

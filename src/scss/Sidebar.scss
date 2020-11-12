@@ -1,0 +1,43 @@
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  background-color: #005585;
+  transition: right 500ms ease-out;
+  z-index: 1;
+
+  &.sidebar-open {
+    width: 300px;
+  }
+
+  &.sidebar-closed {
+    width: 50px;
+
+    & > .sidebar-collapse-container {
+      justify-content: center;
+    }
+
+    & > .sidebar-container {
+      visibility: hidden;
+    }
+  }
+}
+
+.sidebar-container {
+  margin: 20px;
+
+  & h1 {
+    color: white;
+  }
+  & p {
+    color: white;
+    text-align: left;
+  }
+}
+
+.sidebar-collapse-container {
+  display: flex;
+  justify-content: flex-start;
+  margin: 10px;
+}

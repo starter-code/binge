@@ -9,7 +9,12 @@ import { ChartSquare } from './ChartSquare';
 
 const { SEASON, YEAR } = CHART_TYPES;
 
-export const Chart = ({ data: chartInfo }) => {
+export const Chart = ({
+  data: chartInfo,
+  setSidebarData,
+  isSidebarOpen,
+  setIsSidebarOpen,
+}) => {
   const [chartType, setChartType] = useState(SEASON);
 
   const onToggleChart = () => {
@@ -29,7 +34,7 @@ export const Chart = ({ data: chartInfo }) => {
     <div className="chart">
       {isVisible ? (
         <React.Fragment>
-          <div className="y-axis-label">Seasons</div>
+          <div className="y-axis-label">{chartType}</div>
           <div className="x-axis-label">Episodes</div>
           <button onClick={onToggleChart}>Toggle</button>
         </React.Fragment>
@@ -37,7 +42,17 @@ export const Chart = ({ data: chartInfo }) => {
       <div className="chart-data">
         {_.map(newChartInfo, (info, index) => {
           const { data, type } = info;
-          return <ChartSquare key={index} type={type} data={data} />;
+          return (
+            <ChartSquare
+              key={index}
+              type={type}
+              data={data}
+              onClick={() => {
+                !isSidebarOpen && setIsSidebarOpen(true);
+                setSidebarData(index);
+              }}
+            />
+          );
         })}
       </div>
     </div>
@@ -46,4 +61,7 @@ export const Chart = ({ data: chartInfo }) => {
 
 Chart.propTypes = {
   data: PropTypes.arrayOf(TEpisodeData),
+  isSidebarOpen: PropTypes.bool,
+  setSidebarData: PropTypes.func,
+  setIsSidebarOpen: PropTypes.func,
 };

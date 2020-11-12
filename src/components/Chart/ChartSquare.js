@@ -13,8 +13,8 @@ const {
   YEAR_LABELS,
 } = CHART_SQUARE_TYPES;
 
-export const ChartSquare = ({ data, type }) => {
-  const { rating, season: seasonNumber, episode: episodeNumber, url } = data;
+export const ChartSquare = ({ data, type, onClick }) => {
+  const { rating, season: seasonNumber, episode: episodeNumber } = data;
 
   // TODO: create a more verbose hex decimal color scheme
   const colorsGradient = gradient(COLOR_GRADIENT, 100);
@@ -58,11 +58,9 @@ export const ChartSquare = ({ data, type }) => {
   };
 
   return (
-    <div className={chartSquareClassNames} style={style}>
+    <div className={chartSquareClassNames} style={style} onClick={onClick}>
       {type === EPISODE_DATA ? (
-        <a href={url} target="_blank" rel="noopener noreferrer">
-          {renderChartData(type, data)}
-        </a>
+        <div className="chart-square-rating">{renderChartData(type, data)}</div>
       ) : (
         renderChartData(type, data)
       )}
@@ -78,4 +76,5 @@ ChartSquare.propTypes = {
     url: PropTypes.string,
   }),
   type: PropTypes.string,
+  onClick: PropTypes.func,
 };

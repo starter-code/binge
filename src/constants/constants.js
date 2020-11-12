@@ -1,6 +1,6 @@
 export const CHART_TYPES = {
-  SEASON: 'season/episode',
-  YEAR: 'year/episode',
+  SEASON: 'Season',
+  YEAR: 'Year',
 };
 
 // 10 colors from dark red to yellow to dark green
