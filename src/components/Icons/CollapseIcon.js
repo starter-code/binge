@@ -9,7 +9,7 @@ export const CollapseIcon = () => {
       viewBox="0 0 20 20"
       x="0px"
       y="0px"
-      className="collapse"
+      className="collapse-svg"
       fill="white"
     >
       <g>

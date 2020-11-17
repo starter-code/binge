@@ -12,10 +12,20 @@
   }
 }
 
-.collapse {
+.collapse-svg {
   width: 32px;
 
   &:hover {
     transform: scale(1.1);
+  }
+}
+
+.collapse-button:disabled {
+  .collapse-svg {
+    opacity: 0.5;
+
+    &:hover {
+      transform: scale(1);
+    }
   }
 }

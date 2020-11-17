@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 import { CollapseIcon } from 'src/components/Icons';
+import { _ } from 'src/utils';
 import { TEpisodeData } from 'prop-types.d.js';
 
 export const Sidebar = ({ data, onToggleSidebar, isSidebarOpen }) => {
@@ -16,7 +17,11 @@ export const Sidebar = ({ data, onToggleSidebar, isSidebarOpen }) => {
   return (
     <div className={sidebarClassNames}>
       <div className="sidebar-collapse-container">
-        <button className="no-styles" onClick={onToggleSidebar}>
+        <button
+          className="no-styles collapse-button"
+          onClick={_.isEmpty(data) ? _.noop : onToggleSidebar}
+          disabled={_.isEmpty(data)}
+        >
           <CollapseIcon />
         </button>
       </div>
@@ -34,6 +39,6 @@ export const Sidebar = ({ data, onToggleSidebar, isSidebarOpen }) => {
 
 Sidebar.propTypes = {
   data: TEpisodeData,
-  onToggleSidebar: PropTypes.func,
   isSidebarOpen: PropTypes.bool,
+  onToggleSidebar: PropTypes.func,
 };
