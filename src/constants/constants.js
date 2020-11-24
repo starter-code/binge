@@ -25,4 +25,4 @@ export const CHART_SQUARE_TYPES = {
 };
 
 // Number of tv show poster showing
-export const PREVIEW_SERIES_COUNT = 5;
+export const PREVIEW_SERIES_COUNT = 4;

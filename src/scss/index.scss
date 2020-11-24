@@ -1,3 +1,9 @@
+// import scss templating mixin
+@import 'mixins';
+
+// import scss variables
+@import 'variables';
+
 // import tag level scss
 @import 'Main';
 

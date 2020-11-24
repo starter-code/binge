@@ -6,6 +6,7 @@ import isNaN from 'lodash/isNaN';
 import get from 'lodash/get';
 import map from 'lodash/map';
 import noop from 'lodash/noop';
+import slice from 'lodash/slice';
 
 export const _ = {
   cloneDeep,
@@ -16,4 +17,5 @@ export const _ = {
   get,
   map,
   noop,
+  slice,
 };

@@ -1,0 +1,34 @@
+@mixin next-button {
+  border-radius: 50%;
+  background-color: $white;
+  border: 2px solid $dark-blue;
+  padding: 1px 6px;
+  margin: 0 4px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $dark-blue;
+
+    & path {
+      fill: $white;
+    }
+  }
+
+  &:disabled {
+    background-color: $white;
+    border-color: $dark-grey;
+    cursor: auto;
+
+    & path {
+      fill: $dark-grey;
+    }
+
+    &:hover path {
+      fill: $dark-grey;
+    }
+  }
+
+  &:focus {
+    outline: none;
+  }
+}

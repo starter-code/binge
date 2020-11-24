@@ -23,9 +23,9 @@ export const HomePage = () => {
 
   const getData = async () => {
     const requests = [
-      getHighlyRatedShows(PREVIEW_SERIES_COUNT),
-      getRecentlySearchedShows(PREVIEW_SERIES_COUNT),
-      getRandomShows(PREVIEW_SERIES_COUNT),
+      getHighlyRatedShows(PREVIEW_SERIES_COUNT * 2),
+      getRecentlySearchedShows(PREVIEW_SERIES_COUNT * 2),
+      getRandomShows(PREVIEW_SERIES_COUNT * 2),
     ];
     setIsLoading(true);
 
@@ -40,8 +40,6 @@ export const HomePage = () => {
 
   useEffect(() => {
     getData();
-
-    return () => {};
   }, []);
 
   return (

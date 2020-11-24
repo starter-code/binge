@@ -1,6 +1,6 @@
-.octicon {
+.octicon-icon {
   border-radius: 0.5rem;
-  background-color: #ffffff;
+  background-color: $white;
   margin: 0.5rem;
   padding: 0.25rem;
   vertical-align: middle;
@@ -8,12 +8,14 @@
   width: 1rem;
 
   &:hover {
-    background-color: #cccccc;
+    background-color: $light-grey;
   }
 }
 
-.collapse-svg {
+.collapse-icon {
   width: 32px;
+  height: 32px;
+  fill: $white;
 
   &:hover {
     transform: scale(1.1);
@@ -21,11 +23,31 @@
 }
 
 .collapse-button:disabled {
-  .collapse-svg {
+  cursor: auto;
+
+  .collapse-icon {
     opacity: 0.5;
 
     &:hover {
       transform: scale(1);
     }
   }
+}
+
+.next-icon {
+  padding-top: 3px;
+  padding-left: 3px;
+
+  & path {
+    fill: $dark-blue;
+  }
+}
+
+.next-button {
+  @include next-button;
+}
+
+.previous-button {
+  transform: rotate(180deg);
+  @include next-button;
 }

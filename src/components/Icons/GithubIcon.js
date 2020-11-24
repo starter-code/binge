@@ -3,7 +3,7 @@ import React from 'react';
 export const GithubIcon = () => {
   return (
     <svg
-      className="octicon"
+      className="octicon-icon"
       height="32"
       viewBox="0 0 16 16"
       version="1.1"
