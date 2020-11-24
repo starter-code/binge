@@ -13,7 +13,6 @@ export const Sidebar = ({ data, onToggleSidebar, isSidebarOpen }) => {
     'sidebar-closed': !isSidebarOpen,
   });
 
-  // TODO: Rip an episode synopsis out to pass to sidebar
   return (
     <div className={sidebarClassNames}>
       <div className="sidebar-collapse-container">
@@ -29,9 +28,14 @@ export const Sidebar = ({ data, onToggleSidebar, isSidebarOpen }) => {
         <a href={data.url} target="_blank" rel="noreferrer">
           <img alt={`Poster Image of ${data.title}`} src={data.imageURL}></img>
         </a>
-        <h1>{data.title}</h1>
-        <p>Rating: {data.rating}</p>
-        <p>Rating Count: {data.ratingCount}</p>
+        <h1 className="episode-title">{data.title}</h1>
+        <p className="episode-summary">{data.episodeSummary}</p>
+        <p className="episode-run-time">
+          Episode Length: {data.episodeRunTime}
+        </p>
+        <p className="episode-release-date">{data.episodeReleaseDate}</p>
+        <p className="episode-rating">Rating: {data.rating}</p>
+        <p className="episode-rating-count">Rating Count: {data.ratingCount}</p>
       </section>
     </div>
   );

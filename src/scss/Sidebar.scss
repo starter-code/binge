@@ -8,7 +8,7 @@
   z-index: 1;
 
   &.sidebar-open {
-    width: 300px;
+    width: 350px;
   }
 
   &.sidebar-closed {
@@ -30,9 +30,14 @@
   & h1 {
     color: white;
   }
+
   & p {
     color: white;
     text-align: left;
+
+    &.episode-summary {
+      margin: 20px 0;
+    }
   }
 }
 
