@@ -1,13 +1,36 @@
-import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 
 import { getTitleMatches } from 'src/apiEndpoints';
 import { AppContext } from 'src/contexts/AppContext';
 import { _ } from 'src/utils';
+import { SeriesSearchResults } from './SeriesSearchResults';
 
 export const SeriesSearchForm = () => {
   const [searchResults, setSearchResults] = useState([]);
   const { setIsLoading } = useContext(AppContext);
+
+  const searchResultsRef = useRef(null);
+  const searchInputRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(true);
+
+  useEffect(() => {
+    document.addEventListener('click', handleClickOutside, false);
+    return () => {
+      document.removeEventListener('click', handleClickOutside, false);
+    };
+  }, []);
+
+  const handleClickOutside = (event) => {
+    const resultsRef = searchResultsRef.current;
+    const inputRef = searchInputRef.current;
+
+    if (
+      !resultsRef.contains(event.target) &&
+      !inputRef.contains(event.target)
+    ) {
+      setIsVisible(false);
+    }
+  };
 
   const onHandleChange = _.debounce(async (text) => {
     setIsLoading(true);
@@ -27,47 +50,27 @@ export const SeriesSearchForm = () => {
     event.preventDefault();
   };
 
+  const onHandleFocus = () => {
+    setIsVisible(true);
+  };
+
   return (
-    <React.Fragment>
-      <form className="search-form" onSubmit={onHandleSubmit}>
+    <div ref={searchResultsRef} onFocus={onHandleFocus}>
+      <form
+        className="search-form"
+        onSubmit={onHandleSubmit}
+        ref={searchInputRef}
+      >
         <input
           placeholder="Search Series Here"
           type="text"
           onChange={(event) => onHandleChange(event.target.value)}
         />
       </form>
-      <div className="search-results-overlay">
-        {_.map(searchResults, (result, index) => {
-          const {
-            imageURL,
-            numberOfEpisodes,
-            title,
-            titleID,
-            seriesStartYear,
-            seriesEndYear = 'Present',
-          } = result;
-
-          return (
-            <div className="search-series-suggestion" key={index}>
-              <Link to={`chart/${titleID}`}>
-                <img
-                  className="search-series-img"
-                  alt="tv show poster image"
-                  src={imageURL}
-                />
-                <div className="series-search-info">
-                  <p className="search-series-title">
-                    {title} ({numberOfEpisodes})
-                  </p>
-                  <p className="search-series-year">
-                    {seriesStartYear}-{seriesEndYear}
-                  </p>
-                </div>
-              </Link>
-            </div>
-          );
-        })}
-      </div>
-    </React.Fragment>
+      <SeriesSearchResults
+        searchResults={searchResults}
+        isVisible={isVisible}
+      />
+    </div>
   );
 };
